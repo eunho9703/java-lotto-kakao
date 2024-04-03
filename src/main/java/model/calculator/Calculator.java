@@ -19,7 +19,7 @@ public class Calculator {
 
     public Calculator(List<LottoResult> lottoResultList) {
         this.lottoResultList = lottoResultList;
-        initMap();
+        this.rankingCountMap = initMap();
     }
 
     public void saveRanking(Lottery lottery) {
