@@ -3,6 +3,7 @@ package model.calculator;
 import java.util.List;
 
 
+import model.winningLottery.Ranking;
 import org.junit.jupiter.api.Test;
 
 import model.random.LottoNumbers;
@@ -25,10 +26,9 @@ class LottoResultTest {
         WinningBonusNumber bonusNumber = new WinningBonusNumber(7);
         Lottery lottery = new Lottery(winningNumbers, bonusNumber);
 
-        LottoResult expectedResult = new LottoResult(lottoNumbers, FIRST);
-
+        Ranking expectedRanking = FIRST;
         lottoResult.saveRanking(lottery);
 
-        assertThat(lottoResult).isEqualTo(expectedResult);
+        assertThat(lottoResult.getRanking()).isEqualTo(expectedRanking);
     }
 }

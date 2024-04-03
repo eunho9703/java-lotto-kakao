@@ -45,7 +45,7 @@ public class Calculator {
         return Objects.hash(lottoResultList);
     }
 
-    public void calculateRankingCount() {
+    void calculateRankingCount() {
         lottoResultList.forEach(
             lottoResult -> {
                 Ranking ranking = lottoResult.getRanking();
@@ -53,6 +53,7 @@ public class Calculator {
             }
         );
     }
+
 
     public Map<Ranking, Integer> getRankingCountMap() {
         return rankingCountMap;
@@ -63,7 +64,7 @@ public class Calculator {
         asList(Ranking.values()).forEach(
             ranking -> rankingCountMap.put(ranking, 0)
         );
-        return null;
+        return rankingCountMap;
     }
 
     public double calculateProfitRate() {

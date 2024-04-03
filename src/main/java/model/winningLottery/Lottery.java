@@ -16,22 +16,17 @@ public class Lottery {
     public Ranking rank(LottoNumbers lottoNumbers) {
         int winningCount = winningNumbers.matchCount(lottoNumbers);
 
-        if (winningCount == 6) {
-            return FIRST;
+        switch (winningCount) {
+            case 6:
+                return FIRST;
+            case 5:
+                return winningBonusNumber.isMatch(lottoNumbers) ? SECOND : THIRD;
+            case 4:
+                return FOURTH;
+            case 3:
+                return FIFTH;
+            default:
+                return NONE;
         }
-
-        if (winningCount == 5) {
-            return winningBonusNumber.isMatch(lottoNumbers);
-        }
-
-        if (winningCount == 4) {
-            return FOURTH;
-        }
-
-        if (winningCount == 3) {
-            return FIFTH;
-        }
-
-        return NONE;
     }
 }

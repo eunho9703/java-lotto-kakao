@@ -15,13 +15,13 @@ public class WinningBonusNumber {
         this.bonusNumber = bonusNumber;
     }
 
-    public Ranking isMatch(LottoNumbers lottoNumbers) {
+    public boolean isMatch(LottoNumbers lottoNumbers) {
 
         if (lottoNumbers.getLottoNumbers().contains(bonusNumber)) {
-            return SECOND;
+            return true;
         }
 
-        return THIRD;
+        return false;
     }
 
     public static WinningBonusNumber createWinningBonusNumber(WinningNumbers winningNumbers,

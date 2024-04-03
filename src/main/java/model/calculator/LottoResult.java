@@ -12,12 +12,13 @@ public class LottoResult {
     private final LottoNumbers lottoNumbers;
     private Ranking ranking = NONE;
 
-    public Ranking getRanking() {
-        return ranking;
-    }
-
     public LottoResult(LottoNumbers lottoNumbers) {
         this.lottoNumbers = lottoNumbers;
+        this.ranking = NONE;
+    }
+
+    public Ranking getRanking() {
+        return ranking;
     }
 
     private void calculateRanking(Ranking ranking) {
