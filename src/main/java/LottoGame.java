@@ -1,16 +1,11 @@
-import java.awt.CardLayout;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import model.Amount;
 import model.calculator.Calculator;
 import model.calculator.LottoResult;
 import model.random.LottoGenerator;
-import model.winningLottery.Lottery;
-import model.winningLottery.Ranking;
-import model.winningLottery.WinningBonusNumber;
-import model.winningLottery.WinningNumbers;
+import model.winningLottery.*;
 import view.InputView;
 import view.OutputView;
 

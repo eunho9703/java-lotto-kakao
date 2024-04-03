@@ -5,16 +5,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
+import model.winningLottery.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import model.random.LottoNumbers;
-import model.winningLottery.Lottery;
-import model.winningLottery.Ranking;
-import model.winningLottery.WinningBonusNumber;
-import model.winningLottery.WinningNumbers;
 
 import static java.util.Arrays.asList;
 import static java.util.Set.of;

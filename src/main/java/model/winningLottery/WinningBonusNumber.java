@@ -1,6 +1,5 @@
 package model.winningLottery;
 
-import java.nio.channels.Pipe;
 import java.util.Objects;
 import java.util.Set;
 
@@ -8,7 +7,6 @@ import model.random.LottoNumbers;
 
 import static model.random.NumberRange.END;
 import static model.random.NumberRange.START;
-import static model.winningLottery.Ranking.*;
 
 public class WinningBonusNumber {
     private final int bonusNumber;

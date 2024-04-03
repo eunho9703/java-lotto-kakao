@@ -1,6 +1,5 @@
 package model.winningLottery;
 
-import model.random.LottoGenerator;
 import model.random.LottoNumbers;
 
 import static model.winningLottery.Ranking.*;

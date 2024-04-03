@@ -3,8 +3,6 @@ package model.random;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.winningLottery.Ranking;
-
 public class LottoNumbers {
     private List<Integer> LottoNumbers = new ArrayList<>();
 

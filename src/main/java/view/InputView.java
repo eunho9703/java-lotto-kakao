@@ -2,8 +2,6 @@ package view;
 
 import java.util.Scanner;
 
-import model.winningLottery.WinningBonusNumber;
-
 public class InputView {
     static Scanner sc = new Scanner(System.in);
 

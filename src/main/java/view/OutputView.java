@@ -3,12 +3,9 @@ package view;
 import java.util.List;
 import java.util.Map;
 
-import model.Amount;
-import model.random.LottoGenerator;
 import model.random.LottoNumbers;
 import model.winningLottery.Ranking;
 
-import static java.lang.String.format;
 
 public class OutputView {
     public static void printPurchaseCount(int count) {
