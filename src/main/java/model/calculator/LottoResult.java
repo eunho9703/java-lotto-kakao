@@ -3,14 +3,14 @@ package model.calculator;
 import java.util.Objects;
 
 import model.random.LottoNumbers;
-import model.winningLottery.Lottery;
-import model.winningLottery.Ranking;
-import model.winningLottery.WinningBonusNumber;
-import model.winningLottery.WinningNumbers;
+import model.winningLottery.*;
+
+import static model.winningLottery.Ranking.NONE;
+
 
 public class LottoResult {
     private final LottoNumbers lottoNumbers;
-    private Ranking ranking = Ranking.NONE;
+    private Ranking ranking = NONE;
 
     public Ranking getRanking() {
         return ranking;
@@ -18,11 +18,6 @@ public class LottoResult {
 
     public LottoResult(LottoNumbers lottoNumbers) {
         this.lottoNumbers = lottoNumbers;
-    }
-
-    public LottoResult(LottoNumbers lottoNumbers, Ranking ranking) {
-        this.lottoNumbers = lottoNumbers;
-        this.ranking = ranking;
     }
 
     private void calculateRanking(Ranking ranking) {

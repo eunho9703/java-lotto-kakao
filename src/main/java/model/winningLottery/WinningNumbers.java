@@ -11,7 +11,8 @@ import static model.random.NumberRange.*;
 
 public class WinningNumbers {
     private static final int NUMBER_COUNT = 6;
-    private Set<Integer> winningNumbers = new HashSet<>();
+
+    private final Set<Integer> winningNumbers;
 
     public WinningNumbers(Set<Integer> winningNumbers) {
         this.winningNumbers = winningNumbers;

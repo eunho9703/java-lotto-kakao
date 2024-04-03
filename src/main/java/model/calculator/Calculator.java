@@ -14,7 +14,7 @@ import static model.Amount.LOTTO_UNIT_PRICE;
 
 public class Calculator {
     private Map<Ranking, Integer> rankingCountMap = new EnumMap<>(Ranking.class);
-    private List<LottoResult> lottoResultList = new ArrayList<>();
+    private List<LottoResult> lottoResultList;
 
     public Calculator(List<LottoResult> lottoResultList) {
         this.lottoResultList = lottoResultList;
@@ -58,11 +58,12 @@ public class Calculator {
         return rankingCountMap;
     }
 
-    private void initMap() {
+    private Map<Ranking, Integer> initMap() {
         rankingCountMap = new EnumMap<>(Ranking.class);
         asList(Ranking.values()).forEach(
             ranking -> rankingCountMap.put(ranking, 0)
         );
+        return null;
     }
 
     public double calculateProfitRate() {
