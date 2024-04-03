@@ -9,9 +9,9 @@ public class LottoGeneratorTest {
     @Test
     void 구매_금액만큼_랜덤_로또번호_6개가_생성된다() {
         int cost = 6000;
-        Amount.costInput(cost);
+        Amount amount = Amount.costInput(cost);
 
-        LottoGenerator lottoGenerator = LottoGenerator.generate(new Amount(cost));
+        LottoGenerator lottoGenerator = LottoGenerator.generate(amount);
         Assertions.assertThat(lottoGenerator.getWholeLottoSize()).isEqualTo(6);
     }
 }

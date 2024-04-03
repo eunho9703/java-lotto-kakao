@@ -5,8 +5,6 @@ import java.util.Set;
 import model.Ball;
 import org.junit.jupiter.api.Test;
 
-import model.Amount;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 

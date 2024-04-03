@@ -5,7 +5,7 @@ public class Amount {
 
     private final int cost;
 
-    public Amount(int cost) {
+    private Amount(int cost) {
         this.cost = cost;
     }
 
