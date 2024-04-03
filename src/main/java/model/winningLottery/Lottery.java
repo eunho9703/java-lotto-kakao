@@ -2,6 +2,9 @@ package model.winningLottery;
 
 import model.random.LottoNumbers;
 
+import java.util.function.Supplier;
+import java.util.stream.Stream;
+
 import static model.winningLottery.Ranking.*;
 
 public class Lottery {
@@ -16,17 +19,16 @@ public class Lottery {
     public Ranking rank(LottoNumbers lottoNumbers) {
         int winningCount = winningNumbers.matchCount(lottoNumbers);
 
-        switch (winningCount) {
-            case 6:
-                return FIRST;
-            case 5:
-                return winningBonusNumber.isMatch(lottoNumbers) ? SECOND : THIRD;
-            case 4:
-                return FOURTH;
-            case 3:
-                return FIFTH;
-            default:
-                return NONE;
-        }
+        return Stream.<Supplier<Ranking>>of(
+                        () -> winningCount == 6 ? Ranking.FIRST : null,
+                        () -> winningCount == 5 && winningBonusNumber.isMatch(lottoNumbers) ? Ranking.SECOND : null,
+                        () -> winningCount == 5 ? Ranking.THIRD : null,
+                        () -> winningCount == 4 ? Ranking.FOURTH : null,
+                        () -> winningCount == 3 ? Ranking.FIFTH : null
+                )
+                .map(Supplier::get)
+                .filter(rank -> rank != null)
+                .findFirst()
+                .orElse(Ranking.NONE);
     }
 }
