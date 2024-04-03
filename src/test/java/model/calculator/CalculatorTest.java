@@ -4,19 +4,13 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.stream.Stream;
 
 import model.Ball;
 import model.winningLottery.*;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
 
 import model.random.LottoNumbers;
 
-import static java.util.Arrays.asList;
-import static java.util.Set.of;
 import static model.Ball.createBallSet;
 import static model.winningLottery.Ranking.FIFTH;
 import static model.winningLottery.Ranking.FIRST;
@@ -25,7 +19,6 @@ import static model.winningLottery.Ranking.NONE;
 import static model.winningLottery.Ranking.SECOND;
 import static model.winningLottery.Ranking.THIRD;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
 

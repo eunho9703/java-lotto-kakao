@@ -8,7 +8,6 @@ import model.Ball;
 public class LottoNumbers {
     private final Set<Ball> LottoNumbers;
 
-
     public LottoNumbers(Set<Ball> lottoNumbers) {
         LottoNumbers = lottoNumbers;
     }

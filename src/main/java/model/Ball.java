@@ -28,7 +28,6 @@ public class Ball {
         return ball;
     }
 
-
     private void validateNumberRange(int ballNumber) {
         if (ballNumber < START.getValue() ||
                 ballNumber > END.getValue()) {

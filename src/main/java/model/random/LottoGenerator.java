@@ -11,7 +11,6 @@ public class LottoGenerator {
     private final List<LottoNumbers> lottoNumberList;
 
     private LottoGenerator(List<LottoNumbers> lottoNumberList) {
-
         this.lottoNumberList = new ArrayList<>(lottoNumberList);
     }
 

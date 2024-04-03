@@ -23,7 +23,6 @@ public class OutputView {
         rankingCountMap.forEach(
             (key, value) -> System.out.printf("%s (%d원)- %d개\n", key.getCondition(),
             key.getReward(), value));
-
     }
 
     public static void printProfitRateResult(double profitRate) {
