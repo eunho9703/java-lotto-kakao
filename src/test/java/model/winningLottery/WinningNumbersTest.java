@@ -2,6 +2,7 @@ package model.winningLottery;
 
 import java.util.Set;
 
+import model.Ball;
 import org.junit.jupiter.api.Test;
 
 import model.Amount;
@@ -38,7 +39,7 @@ class WinningNumbersTest {
     @Test
     void 생성_테스트() {
         WinningNumbers winningNumbers = WinningNumbers.createWinningNumbers("1,2,3,4,5,6");
-        WinningNumbers expectedWinningNumber = new WinningNumbers(Set.of(1,2,3,4,5,6));
+        WinningNumbers expectedWinningNumber = new WinningNumbers(Ball.createBallSet(Set.of(1,2,3,4,5,6)));
 
         assertThat(winningNumbers).isEqualTo(expectedWinningNumber);
     }

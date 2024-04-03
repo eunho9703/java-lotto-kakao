@@ -2,6 +2,7 @@ import java.util.List;
 import java.util.Map;
 
 import model.Amount;
+import model.Ball;
 import model.calculator.Calculator;
 import model.calculator.LottoResult;
 import model.random.LottoGenerator;
@@ -30,7 +31,7 @@ public class LottoGame {
             .createWinningNumbers(InputView.winningNumbersInput());
 
         WinningBonusNumber winningBonusNumber = WinningBonusNumber
-            .createWinningBonusNumber(winningNumbers, InputView.winningBonusNumberInput());
+            .createWinningBonusNumber(winningNumbers, new Ball(InputView.winningBonusNumberInput()));
 
         //로또 당첨용 객체 생성
         Lottery lottery = new Lottery(winningNumbers, winningBonusNumber);
