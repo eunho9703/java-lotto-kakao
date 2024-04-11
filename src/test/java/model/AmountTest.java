@@ -19,14 +19,14 @@ public class AmountTest {
         int cost = 14500;
 
         assertThatExceptionOfType(IllegalArgumentException.class)
-            .isThrownBy(() -> {
-                Amount.amountInput(cost);
-            }).withMessage("1000원 단위로 입력해주세요.");
+                .isThrownBy(() -> {
+                    Amount.amountInput(cost);
+                }).withMessage("1000원 단위로 입력해주세요.");
     }
 
     @Test
-    void 금액은_0_초과가_아니면_exception_출력() {
-        int cost = 0;
+    void 금액이_0_미만이면_exception_출력() {
+        int cost = -1;
 
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> {
