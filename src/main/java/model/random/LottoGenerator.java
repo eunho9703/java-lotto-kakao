@@ -58,11 +58,12 @@ public class LottoGenerator {
     }
 
     public List<LottoNumbers> getAutomaticLottoNumberList() {
-        return automaticLottoNumberList;
+        return new ArrayList<>(automaticLottoNumberList);
     }
 
     public List<LottoNumbers> getEntireLottoNumberList() {
-        return entireLottoNumberList;
+
+        return new ArrayList<>(entireLottoNumberList);
     }
 
     public int getEntireLottoSize() {
