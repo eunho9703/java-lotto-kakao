@@ -16,21 +16,22 @@ public class LottoGenerator {
     private final List<LottoNumbers> manaulLottoNumberList;
     private List<LottoNumbers> entireLottoNumberList;
 
-    private LottoGenerator(List<LottoNumbers> automaticLottoNumberList,List<LottoNumbers> manualLottoNumberList) {
+    private LottoGenerator(List<LottoNumbers> automaticLottoNumberList, List<LottoNumbers> manualLottoNumberList) {
         this.automaticLottoNumberList = new ArrayList<>(automaticLottoNumberList);
-        this.manaulLottoNumberList =new ArrayList<>(manualLottoNumberList);
+        this.manaulLottoNumberList = new ArrayList<>(manualLottoNumberList);
         this.entireLottoNumberList = Stream.concat(automaticLottoNumberList.stream(), manaulLottoNumberList.stream())
                 .collect(Collectors.toList());
     }
 
-    public static LottoGenerator generate(List<String> manualString , Amount amount) {
+    public static LottoGenerator generate(List<String> manualString, Amount amount) {
         int automaticCount = amount.getAmount() / LOTTO_UNIT_PRICE;
 
         List<LottoNumbers> automaticLottoNumberList = new ArrayList<>();
 
-        for (int i=0; i<automaticCount; i++) {
+        for (int i = 0; i < automaticCount; i++) {
             LottoNumbers lottoNumbers =
-                    new LottoNumbers(LottoNumbers.generateRandNums(new RandomNumberGenerator() {}));
+                    new LottoNumbers(LottoNumbers.generateRandNums(new RandomNumberGenerator() {
+                    }));
             automaticLottoNumberList.add(lottoNumbers);
         }
 
@@ -44,7 +45,7 @@ public class LottoGenerator {
                 .map(LottoNumbers::new)
                 .collect(Collectors.toList());
 
-        return new LottoGenerator(automaticLottoNumberList,manualLottoNumberList);
+        return new LottoGenerator(automaticLottoNumberList, manualLottoNumberList);
     }
 
 

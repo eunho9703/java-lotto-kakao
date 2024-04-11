@@ -51,9 +51,7 @@ public class LottoController {
     }
 
     private List<LottoResult> generateLottoResults(LottoGenerator lottoGenerator) {
-        return lottoGenerator.getEntireLottoNumberList().stream()
-                .map(LottoResult::new)
-                .collect(Collectors.toList());
+        return lottoGenerator.getEntireLottoNumberList().stream().map(LottoResult::new).collect(Collectors.toList());
     }
 
     private void printRankingResult(Calculator calculator) {

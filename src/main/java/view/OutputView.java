@@ -14,15 +14,15 @@ public class OutputView {
 
     public static void printLottoNumberList(List<LottoNumbers> lottoNumberList) {
         lottoNumberList.forEach(
-            lottoNumbers -> System.out.println(lottoNumbers.getLottoNumbers())
+                lottoNumbers -> System.out.println(lottoNumbers.getLottoNumbers())
         );
     }
 
     public static void printRankingResult(Map<Ranking, Integer> rankingCountMap) {
         System.out.println("\n당첨 통계\n---------");
         rankingCountMap.forEach(
-            (key, value) -> System.out.printf("%s (%d원)- %d개\n", key.getCondition(),
-            key.getReward(), value));
+                (key, value) -> System.out.printf("%s (%d원)- %d개\n", key.getCondition(),
+                        key.getReward(), value));
     }
 
     public static void printProfitRateResult(double profitRate) {

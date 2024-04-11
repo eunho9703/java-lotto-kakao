@@ -21,15 +21,15 @@ public class WinningNumbers {
 
     public int matchCount(LottoNumbers lottoNumbers) {
         return lottoNumbers.getLottoNumbers()
-            .stream()
-            .filter(Objects::nonNull)
-            .mapToInt(
-                this::numberMatch
-            ).sum();
+                .stream()
+                .filter(Objects::nonNull)
+                .mapToInt(
+                        this::numberMatch
+                ).sum();
     }
 
     private int numberMatch(Ball lottoNumber) {
-        if (winningNumbers.contains(lottoNumber)){
+        if (winningNumbers.contains(lottoNumber)) {
             return 1;
         }
         return 0;
