@@ -18,8 +18,9 @@ public class LottoController {
     public void run() {
         int budgetInput = InputView.budgetInput();
         int manualCountInput = InputView.manualAmountInput();
+        ManualLotto manualLotto = new ManualLotto();
 
-        ManualLotto manualAmount = ManualLotto.manualCountInput(budgetInput, manualCountInput);
+        ManualLotto manualAmount = manualLotto.manualCountInput(budgetInput, manualCountInput);
         Amount automaticAmount = Amount.amountInput(manualAmount.getManualAmount(budgetInput, manualCountInput));
 
         List<String> manualString = InputView.manualNumbersInput(manualCountInput);

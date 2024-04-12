@@ -14,10 +14,11 @@ public class ManualCountTest {
     void 수동구매수는_1_이상이_아니면_exception_출력() {
         int budget = 10000;
         int manualAmountInput = -1;
+        ManualLotto manualLotto = new ManualLotto();
 
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> {
-                    ManualLotto.manualCountInput(budget, manualAmountInput);
+                    manualLotto.manualCountInput(budget, manualAmountInput);
                 }).withMessage("구입할 수동 로또 수를 0개 이상 입력하세요.");
     }
 
@@ -25,10 +26,11 @@ public class ManualCountTest {
     void 수동구매수는_전체구매수보다_적게_입력받는다() {
         int budget = 10000;
         int manualAmountInput = 11;
+        ManualLotto manualLotto = new ManualLotto();
 
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> {
-                    ManualLotto.manualCountInput(budget, manualAmountInput);
+                    manualLotto.manualCountInput(budget, manualAmountInput);
                 }).withMessage("전체 구입 수보다 적은 수를 입력하세요.");
     }
 

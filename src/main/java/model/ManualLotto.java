@@ -4,21 +4,24 @@ import static model.Amount.LOTTO_UNIT_PRICE;
 
 public class ManualLotto {
 
-    private ManualLotto() {
+    private final int lottoUnitPrice;
+
+    public ManualLotto() {
+        lottoUnitPrice = Amount.LOTTO_UNIT_PRICE;
     }
 
-    public static ManualLotto manualCountInput(int budget, int manualCount) {
+    public ManualLotto manualCountInput(int budget, int manualCount) {
         validateCount(budget, manualCount);
         return new ManualLotto();
     }
 
-    private static void validateCount(int budget, int manualCount) {
+    private void validateCount(int budget, int manualCount) {
         validateProperCount(budget, manualCount);
         validatePositiveCount(manualCount);
     }
 
-    private static void validateProperCount(int budget, int manualCount) {
-        int entireCount = budget / LOTTO_UNIT_PRICE;
+    private void validateProperCount(int budget, int manualCount) {
+        int entireCount = budget / lottoUnitPrice;
 
         if (entireCount > 0 && manualCount > entireCount) {
             throw new IllegalArgumentException("전체 구입 수보다 적은 수를 입력하세요.");
