@@ -24,8 +24,14 @@ public class LottoGenerator {
     }
 
     public static LottoGenerator generate(List<String> manualString, Amount amount) {
-        int automaticCount = amount.getAmount() / LOTTO_UNIT_PRICE;
+        List<LottoNumbers> automaticLottoNumberList = generateAutomaticLottoNumbers(amount);
+        List<LottoNumbers> manualLottoNumberList = generateManualLottoNumbers(manualString);
 
+        return new LottoGenerator(automaticLottoNumberList, manualLottoNumberList);
+    }
+
+    private static List<LottoNumbers> generateAutomaticLottoNumbers(Amount amount) {
+        int automaticCount = amount.getAmount() / LOTTO_UNIT_PRICE;
         List<LottoNumbers> automaticLottoNumberList = new ArrayList<>();
 
         for (int i = 0; i < automaticCount; i++) {
@@ -35,7 +41,10 @@ public class LottoGenerator {
             automaticLottoNumberList.add(lottoNumbers);
         }
 
+        return automaticLottoNumberList;
+    }
 
+    private static List<LottoNumbers> generateManualLottoNumbers(List<String> manualString) {
         Pattern lineSplitPattern = Pattern.compile("\n");
 
         List<LottoNumbers> manualLottoNumberList = manualString.stream()
@@ -45,9 +54,8 @@ public class LottoGenerator {
                 .map(LottoNumbers::new)
                 .collect(Collectors.toList());
 
-        return new LottoGenerator(automaticLottoNumberList, manualLottoNumberList);
+        return manualLottoNumberList;
     }
-
 
     public int calculateAutomaticAmount() {
         return automaticLottoNumberList.size();
